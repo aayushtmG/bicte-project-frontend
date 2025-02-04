@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { BASE_URL } from "../redux/constants";
 
 const HomeCarousel = () => {
   const settings = {
@@ -30,7 +31,7 @@ const HomeCarousel = () => {
             (image,index) => (
               <div key={index}>
                 <img
-                  src={image}
+                  src={BASE_URL+image}
                   alt={'Banner Image'}
                   className="w-full rounded-lg object-cover h-[30rem]"
                 />

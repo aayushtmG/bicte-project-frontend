@@ -10,6 +10,7 @@ import Rating from "./Rating";
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
 import { addToCart } from "../../redux/features/cart/cartSlice";
+import { BASE_URL } from "../../redux/constants";
 import {
   FaBox,
   FaClock,
@@ -84,7 +85,7 @@ const Product = () => {
           <div className="flex flex-wrap relative items-between mt-[2rem] ml-[10rem]">
             <div>
               <img
-                src={product.image}
+                src={BASE_URL+product.image}
                 alt={product.name}
                 className="w-full  xl:w-[50rem] lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
               />

@@ -43,36 +43,32 @@ const Navigation = () => {
 
   return (
     <div
-      style={{ zIndex: 9999 }}
-      className={`${
-        showSidebar ? "hidden" : "flex"
-      } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[15%] h-[100vh]  fixed `}
+      className={`flex items-center justify-between p-2 px-4 text-white bg-blue-500 sticky top-0 z-50`}
       id="navigation-container"
     >
-      <div className="flex flex-col justify-center space-y-4">
+      <div className="flex items-center justify-between gap-10  2xl:text-xl">
         <Link
           to="/"
-          className="flex items-center transition-transform transform hover:translate-x-2"
+          className="flex justify-center items-center nav-item"
         >
-          <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
+          <AiOutlineHome size={0} className="text-lg 2xl:text-xl" />
+          <span className="hidden nav-item-name ">HOME</span>{" "}
         </Link>
 
         <Link
           to="/shop"
-          className="flex items-center transition-transform transform hover:translate-x-2"
+          className="flex justify-center items-center nav-item"
         >
-          <AiOutlineShopping className="mr-2 mt-[3rem]" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
+          <AiOutlineShopping size={0} className="text-lg  2xl:text-xl" />
+          <span className="hidden nav-item-name">SHOP</span>{" "}
         </Link>
 
-        <Link to="/cart" className="flex relative">
-          <div className="flex items-center transition-transform transform hover:translate-x-2">
-            <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
-            <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
+        <Link to="/cart" className="flex relative nav-item">
+          <div className="flex justify-center items-center">
+            <AiOutlineShoppingCart size={0} className="text-lg 2xl:text-xl"/>
+            <span className="hidden nav-item-name ">Cart</span>{" "}
           </div>
-
-          <div className="absolute top-9">
+          <div className="absolute -top-3 -left-3">
             {cartItems.length > 0 && (
               <span>
                 <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
@@ -83,17 +79,14 @@ const Navigation = () => {
           </div>
         </Link>
 
-        <Link to="/favorite" className="flex relative">
-          <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
-            <FaHeart className="mt-[3rem] mr-2" size={20} />
-            <span className="hidden nav-item-name mt-[3rem]">
-              Favorites
-            </span>{" "}
+        <Link to="/favorite" className="flex relative nav-item">
             <FavoritesCount />
+          <div className="flex justify-center items-center ">
+            <FaHeart size={0} className="text-lg 2xl:text-xl" />
+            <span className="hidden nav-item-name ">Favorites</span>
           </div>
         </Link>
       </div>
-
       <div className="relative">
         <button
           onClick={toggleDropdown}
@@ -191,22 +184,22 @@ const Navigation = () => {
           </ul>
         )}
         {!userInfo && (
-          <ul>
+          <ul className='flex gap-6'>
             <li>
               <Link
                 to="/login"
-                className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                className="flex items-center flex-col justify-center text-sm"
               >
-                <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
+                <AiOutlineLogin size={24} />
                 <span className="hidden nav-item-name">LOGIN</span>
               </Link>
             </li>
             <li>
               <Link
                 to="/register"
-                className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                className="flex items-center flex-col justify-center text-sm"
               >
-                <AiOutlineUserAdd size={26} />
+                <AiOutlineUserAdd size={24} />
                 <span className="hidden nav-item-name">REGISTER</span>
               </Link>
             </li>

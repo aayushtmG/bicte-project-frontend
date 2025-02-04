@@ -7,6 +7,7 @@ import {
   useGetProductByIdQuery,
   useUploadProductImageMutation,
 } from "../../redux/api/productApiSlice";
+import { BASE_URL } from "../../redux/constants";
 import { useFetchCategoriesQuery } from "../../redux/api/categoryApiSlice";
 import { toast } from "react-toastify";
 
@@ -142,7 +143,7 @@ const AdminProductUpdate = () => {
             {image && (
               <div className="text-center">
                 <img
-                  src={image}
+                  src={BASE_URL+image}
                   alt="product"
                   className="block mx-auto w-full h-[40%]"
                 />

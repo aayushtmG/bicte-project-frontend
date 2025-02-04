@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
+import { BASE_URL } from "../../redux/constants";
 import { toast } from "react-toastify";
 import HeartIcon from "./HeartIcon";
 
@@ -25,7 +26,7 @@ const ProductCard = ({ p }) => {
           </span>
           <img
             className="cursor-pointer w-full"
-            src={p.image}
+            src={BASE_URL + p.image}
             alt={p.name}
             style={{ height: "170px", objectFit: "cover" }}
           />
